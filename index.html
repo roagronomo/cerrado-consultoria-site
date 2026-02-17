@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado Consultoria Agropecuária</title>
+    <meta name="description" content="Cerrado Consultoria Agropecuária - Assessoria rural, gestão de propriedades e soluções para o agronegócio em Goiás.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde-escuro: #1B5E20;
+            --verde-medio: #2E7D32;
+            --verde-claro: #4CAF50;
+            --dourado: #F9A825;
+            --dourado-escuro: #F57F17;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-medio: #9E9E9E;
+            --texto: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-medio) 100%);
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--dourado);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--verde-escuro);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--branco);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--dourado);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--dourado);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(27, 94, 32, 0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231B5E20" width="1200" height="600"/><circle cx="200" cy="300" r="150" fill="%232E7D32" opacity="0.3"/><circle cx="800" cy="200" r="200" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="400" r="180" fill="%232E7D32" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 30px 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--branco);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h2 span {
+            color: var(--dourado);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--dourado);
+            color: var(--verde-escuro);
+            border: 2px solid var(--dourado);
+        }
+
+        .btn-primary:hover {
+            background: var(--dourado-escuro);
+            border-color: var(--dourado-escuro);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(249, 168, 37, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--branco);
+            border: 2px solid var(--branco);
+        }
+
+        .btn-secondary:hover {
+            background: var(--branco);
+            color: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+
+        /* SOBRE */
+        .sobre {
+            padding: 100px 30px;
+            background: var(--branco);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--verde-escuro);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--cinza-medio);
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre-text h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--verde-escuro);
+            margin-bottom: 20px;
+        }
+
+        .sobre-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .sobre-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .stat-card {
+            background: var(--cinza-claro);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card .number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--verde-escuro);
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: var(--cinza-medio);
+            margin-top: 5px;
+        }
+
+        /* SERVICOS */
+        .servicos {
+            padding: 100px 30px;
+            background: var(--cinza-claro);
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .servico-card {
+            background: var(--branco);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-top-color: var(--dourado);
+        }
+
+        .servico-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .servico-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--verde-escuro);
+            margin-bottom: 15px;
+        }
+
+        .servico-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* CONTATO */
+        .contato {
+            padding: 100px 30px;
+            background: var(--branco);
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contato-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contato-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contato-item .icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contato-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--verde-escuro);
+            margin-bottom: 3px;
+        }
+
+        .contato-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .contato-map {
+            background: var(--cinza-claro);
+            border-radius: 15px;
+            overflow: hidden;
+            min-height: 350px;
+        }
+
+        .contato-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #0D3B13 100%);
+            color: var(--branco);
+            padding: 50px 30px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-info p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .sobre-grid, .contato-grid { grid-template-columns: 1fr; }
+            .servicos-grid { grid-template-columns: 1fr; }
+            nav { display: none; }
+            .header-content { padding: 12px 20px; }
+            .logo-text h1 { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">C</div>
+                <div class="logo-text">
+                    <h1>Cerrado Consultoria</h1>
+                    <span>Agropecuária</span>
+                </div>
+            </div>
+            <nav>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Soluções Inteligentes para o <span>Agronegócio</span></h2>
+            <p>Assessoria rural completa, gestão de propriedades e documentação imobiliária com excelência e tecnologia.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/556481472081" class="btn btn-primary" target="_blank">Fale Conosco</a>
+                <a href="#servicos" class="btn btn-secondary">Nossos Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <h2 class="section-title">Quem Somos</h2>
+            <p class="section-subtitle">Tradição e inovação no campo</p>
+            <div class="sobre-grid">
+                <div class="sobre-text">
+                    <h3>Cerrado Consultoria Agropecuária</h3>
+                    <p>Somos uma empresa especializada em consultoria agropecuária, com foco em gestão de propriedades rurais, documentação imobiliária e assessoria técnica para produtores rurais na região do Cerrado goiano.</p>
+                    <p>Com sede em Bom Jesus de Goiás - GO, atuamos em toda a região do Sul de Goiás e Triângulo Mineiro, oferecendo soluções completas para otimizar a gestão do seu negócio rural.</p>
+                    <p><strong>CNPJ:</strong> 36.877.747/0001-70<br>
+                    <strong>Razão Social:</strong> RR Lopes do Nascimento LTDA</p>
+                </div>
+                <div class="sobre-stats">
+                    <div class="stat-card">
+                        <div class="number">5+</div>
+                        <div class="label">Anos de experiência</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">80+</div>
+                        <div class="label">Imóveis gerenciados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">6</div>
+                        <div class="label">Municípios atendidos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">100%</div>
+                        <div class="label">Compromisso</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICOS -->
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Soluções completas para o produtor rural</p>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <div class="servico-icon">📋</div>
+                    <h3>Documentação Imobiliária</h3>
+                    <p>Gestão completa de matrículas, certidões e registros de imóveis rurais. Organização e controle documental.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">🌾</div>
+                    <h3>Assessoria Rural</h3>
+                    <p>Consultoria técnica para otimização de processos e gestão eficiente de propriedades agropecuárias.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">📊</div>
+                    <h3>Gestão Financeira</h3>
+                    <p>Controle financeiro, planejamento tributário e gestão de contas para o agronegócio.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">🗺️</div>
+                    <h3>Georreferenciamento</h3>
+                    <p>Serviços de georreferenciamento e regularização fundiária de imóveis rurais.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">⚖️</div>
+                    <h3>Regularização</h3>
+                    <p>Assessoria em processos de regularização junto a cartórios e órgãos competentes.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">💡</div>
+                    <h3>Tecnologia no Campo</h3>
+                    <p>Implementação de soluções tecnológicas para modernização e automação de processos rurais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Estamos prontos para ajudar seu negócio</p>
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>R. Duque de Caxias, 175 - Quadra 8-A, Centro<br>Bom Jesus de Goiás - GO, 75570-000</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="icon">📞</div>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(64) 3608-3944</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="icon">📱</div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>(64) 8147-2081</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="icon">✉️</div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>rodrigo@cerradoconsultoria.agr.br</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="icon">📷</div>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p>@cerradoconsultoria</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contato-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15148.5!2d-49.78!3d-18.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a6b0!2sBom%20Jesus%20de%20Goi%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="logo">
+                    <div class="logo-icon">C</div>
+                    <div class="logo-text">
+                        <h1>Cerrado Consultoria</h1>
+                        <span>Agropecuária</span>
+                    </div>
+                </div>
+                <p>RR Lopes do Nascimento LTDA - CNPJ: 36.877.747/0001-70</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cerrado Consultoria Agropecuária. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/556481472081" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
