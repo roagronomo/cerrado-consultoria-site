@@ -3,619 +3,1927 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerrado Consultoria Agropecuária</title>
-    <meta name="description" content="Cerrado Consultoria Agropecuária - Assessoria rural, gestão de propriedades e soluções para o agronegócio em Goiás.">
+    <title>Cerrado Consultoria Agropecuária — Crédito Rural, Planejamento e Regularização</title>
+    <meta name="description" content="Cerrado Consultoria Agropecuária: assessoria especializada em crédito rural, planejamento agropecuário e regularização ambiental para produtores de grãos e pecuária em Goiás, Minas Gerais e Tocantins.">
+    <meta name="keywords" content="crédito rural, financiamento agrícola, consultoria agropecuária, regularização ambiental, CREA, CAR, ITR, CCIR, Goiás, Cerrado">
+    <meta property="og:title" content="Cerrado Consultoria Agropecuária">
+    <meta property="og:description" content="Mais de R$ 1 bilhão em crédito rural aprovado. Assessoria completa para o produtor rural.">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --verde-escuro: #1B5E20;
-            --verde-medio: #2E7D32;
-            --verde-claro: #4CAF50;
-            --dourado: #F9A825;
-            --dourado-escuro: #F57F17;
-            --branco: #FFFFFF;
-            --cinza-claro: #F5F5F5;
-            --cinza-medio: #9E9E9E;
-            --texto: #333333;
+            --verde-profundo: #0f2a0a;
+            --verde-escuro: #1a4010;
+            --verde-medio: #2d6b1a;
+            --verde-claro: #4a9130;
+            --dourado: #c8941a;
+            --dourado-claro: #e8b84b;
+            --areia: #f7f3ec;
+            --creme: #fdfbf7;
+            --texto: #1c1c1a;
+            --texto-suave: #5a5a52;
+            --borda: #e0d8cc;
+            --branco: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             color: var(--texto);
-            line-height: 1.6;
+            background: var(--creme);
+            line-height: 1.65;
+            font-size: 15px;
         }
 
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-medio) 100%);
-            padding: 0;
+        /* ─── NAVBAR ─────────────────────────────────────────── */
+        .navbar {
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 0 40px;
+            transition: background 0.4s, box-shadow 0.4s;
         }
 
-        .header-content {
+        .navbar.scrolled {
+            background: rgba(15, 42, 10, 0.97);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+        }
+
+        .navbar-inner {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
+            justify-content: space-between;
+            height: 72px;
         }
 
-        .logo {
+        .nav-logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            text-decoration: none;
         }
 
-        .logo-icon {
-            width: 50px;
-            height: 50px;
+        .nav-logo-icon {
+            width: 38px;
+            height: 38px;
             background: var(--dourado);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--verde-profundo);
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-logo-text strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--branco);
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+        }
+
+        .nav-logo-text span {
+            font-size: 0.65rem;
+            color: var(--dourado-claro);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--dourado-claro); }
+
+        .nav-cta {
+            background: var(--dourado);
+            color: var(--verde-profundo) !important;
+            padding: 9px 22px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            font-size: 0.82rem !important;
+            letter-spacing: 0.2px;
+            transition: background 0.2s, transform 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--dourado-claro) !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--branco);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ─── HERO ───────────────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(160deg, var(--verde-profundo) 0%, var(--verde-escuro) 55%, #1e4d12 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 40px 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 80% 30%, rgba(200,148,26,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(74,145,48,0.12) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(200,148,26,0.15);
+            border: 1px solid rgba(200,148,26,0.3);
+            color: var(--dourado-claro);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--dourado);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.4rem;
+            font-weight: 600;
+            color: var(--branco);
+            line-height: 1.15;
+            margin-bottom: 22px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--dourado-claro);
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.72);
+            margin-bottom: 40px;
+            max-width: 480px;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold {
+            background: var(--dourado);
+            color: var(--verde-profundo);
+            padding: 13px 28px;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: all 0.25s;
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            background: var(--dourado-claro);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(200,148,26,0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: rgba(255,255,255,0.85);
+            padding: 13px 28px;
+            border-radius: 7px;
+            font-weight: 500;
+            font-size: 0.88rem;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.25);
+            transition: all 0.25s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.6);
+            color: var(--branco);
+            background: rgba(255,255,255,0.06);
+        }
+
+        .hero-metrics {
+            display: flex;
+            gap: 32px;
+            margin-top: 48px;
+            padding-top: 36px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dourado-claro);
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 4px;
+            letter-spacing: 0.3px;
+        }
+
+        /* Hero visual card */
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 22px 24px;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s;
+        }
+
+        .hero-card:hover { transform: translateX(4px); }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .icon-gold { background: rgba(200,148,26,0.2); }
+        .icon-green { background: rgba(74,145,48,0.2); }
+        .icon-blue { background: rgba(30,100,180,0.2); }
+
+        .hero-card-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--branco);
+        }
+
+        .hero-card-desc {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.5;
+        }
+
+        /* ─── MARQUEE ─────────────────────────────────────────── */
+        .marquee-section {
+            background: var(--verde-profundo);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 14px 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 0;
+            animation: marquee 28s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 32px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .marquee-item::after {
+            content: '·';
+            color: var(--dourado);
+            font-size: 1.2rem;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ─── PARCEIROS ───────────────────────────────────────── */
+        .parceiros {
+            padding: 60px 40px;
+            background: var(--areia);
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .parceiros-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .parceiros-label {
+            text-align: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--texto-suave);
+            margin-bottom: 32px;
+        }
+
+        .parceiros-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .banco-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .banco-logo:hover { opacity: 1; }
+
+        .banco-badge {
+            width: 52px;
+            height: 52px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
             font-weight: 800;
-            color: var(--verde-escuro);
-            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+            color: var(--branco);
         }
 
-        .logo-text h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--branco);
+        .banco-nome {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--texto-suave);
             letter-spacing: 0.5px;
         }
 
-        .logo-text span {
-            font-size: 0.75rem;
-            color: var(--dourado);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+        .bb { background: #FCBA03; color: #1a1a1a; }
+        .bradesco { background: #CC092F; }
+        .caixa { background: #005CA9; }
+        .sicredi { background: #00A651; }
+        .sicoob { background: #003882; }
 
-        nav a {
-            color: var(--branco);
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--dourado);
-        }
-
-        /* HERO */
-        .hero {
-            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(27, 94, 32, 0.9)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231B5E20" width="1200" height="600"/><circle cx="200" cy="300" r="150" fill="%232E7D32" opacity="0.3"/><circle cx="800" cy="200" r="200" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="400" r="180" fill="%232E7D32" opacity="0.2"/></svg>');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
+        .eagro-badge {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            background: rgba(204,9,47,0.08);
+            border: 1px solid rgba(204,9,47,0.2);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #CC092F;
+            margin-top: 20px;
+        }
+
+        .eagro-wrapper {
             text-align: center;
-            padding: 120px 30px 80px;
+            margin-top: 8px;
         }
 
-        .hero-content {
-            max-width: 800px;
+        /* ─── PILARES ─────────────────────────────────────────── */
+        .pilares {
+            padding: 100px 40px;
+            background: var(--creme);
         }
 
-        .hero h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--branco);
-            margin-bottom: 20px;
-            line-height: 1.2;
+        .section-header {
+            text-align: center;
+            max-width: 580px;
+            margin: 0 auto 64px;
         }
 
-        .hero h2 span {
-            color: var(--dourado);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 15px 35px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .btn-primary {
-            background: var(--dourado);
-            color: var(--verde-escuro);
-            border: 2px solid var(--dourado);
-        }
-
-        .btn-primary:hover {
-            background: var(--dourado-escuro);
-            border-color: var(--dourado-escuro);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(249, 168, 37, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--branco);
-            border: 2px solid var(--branco);
-        }
-
-        .btn-secondary:hover {
-            background: var(--branco);
-            color: var(--verde-escuro);
-            transform: translateY(-2px);
-        }
-
-        /* SOBRE */
-        .sobre {
-            padding: 100px 30px;
-            background: var(--branco);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .section-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--verde-medio);
+            margin-bottom: 12px;
         }
 
         .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--verde-escuro);
-            text-align: center;
-            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--verde-profundo);
+            line-height: 1.2;
+            margin-bottom: 14px;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--cinza-medio);
-            font-size: 1.1rem;
-            margin-bottom: 60px;
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--texto-suave);
+            line-height: 1.7;
         }
 
-        .sobre-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .sobre-text h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            color: var(--verde-escuro);
-            margin-bottom: 20px;
-        }
-
-        .sobre-text p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .sobre-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .stat-card {
-            background: var(--cinza-claro);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-card .number {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--verde-escuro);
-        }
-
-        .stat-card .label {
-            font-size: 0.9rem;
-            color: var(--cinza-medio);
-            margin-top: 5px;
-        }
-
-        /* SERVICOS */
-        .servicos {
-            padding: 100px 30px;
-            background: var(--cinza-claro);
-        }
-
-        .servicos-grid {
+        .pilares-grid {
+            max-width: 1100px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 24px;
         }
 
-        .servico-card {
+        .pilar-card {
             background: var(--branco);
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            padding: 36px 30px;
             transition: all 0.3s;
-            border-top: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
 
-        .servico-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            border-top-color: var(--dourado);
+        .pilar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--verde-medio), var(--dourado));
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        .servico-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .pilar-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+            border-color: transparent;
         }
 
-        .servico-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            color: var(--verde-escuro);
-            margin-bottom: 15px;
-        }
+        .pilar-card:hover::before { opacity: 1; }
 
-        .servico-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* CONTATO */
-        .contato {
-            padding: 100px 30px;
-            background: var(--branco);
-        }
-
-        .contato-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contato-info {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .contato-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .contato-item .icon {
-            width: 50px;
-            height: 50px;
+        .pilar-icon {
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .pilar-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--verde-profundo);
+            margin-bottom: 12px;
+        }
+
+        .pilar-card p {
+            font-size: 0.88rem;
+            color: var(--texto-suave);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .pilar-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pilar-list li {
+            font-size: 0.82rem;
+            color: var(--texto-suave);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .pilar-list li::before {
+            content: '→';
+            color: var(--dourado);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ─── ALERTA / RISCO ──────────────────────────────────── */
+        .risco-section {
+            background: linear-gradient(135deg, var(--verde-profundo) 0%, #0d2208 100%);
+            padding: 90px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .risco-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 60% at 90% 50%, rgba(200,148,26,0.07) 0%, transparent 60%);
+        }
+
+        .risco-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .risco-content .section-eyebrow { color: var(--dourado-claro); }
+
+        .risco-content .section-title { color: var(--branco); }
+
+        .risco-content p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        .risco-content .btn-gold { margin-top: 12px; }
+
+        .risco-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .risco-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .risco-card-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: rgba(200,148,26,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
             flex-shrink: 0;
         }
 
-        .contato-item h4 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--verde-escuro);
-            margin-bottom: 3px;
-        }
-
-        .contato-item p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .contato-map {
-            background: var(--cinza-claro);
-            border-radius: 15px;
-            overflow: hidden;
-            min-height: 350px;
-        }
-
-        .contato-map iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 350px;
-            border: none;
-        }
-
-        /* FOOTER */
-        footer {
-            background: linear-gradient(135deg, var(--verde-escuro) 0%, #0D3B13 100%);
+        .risco-card-text h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
             color: var(--branco);
-            padding: 50px 30px 30px;
+            margin-bottom: 4px;
         }
 
-        .footer-content {
-            max-width: 1200px;
+        .risco-card-text p {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.5);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ─── LINHAS DE CRÉDITO ───────────────────────────────── */
+        .credito {
+            padding: 100px 40px;
+            background: var(--areia);
+        }
+
+        .credito-inner {
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .credito-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 56px;
+        }
+
+        .credito-card {
+            background: var(--branco);
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+            padding: 28px 22px;
+            transition: all 0.3s;
+        }
+
+        .credito-card:hover {
+            border-color: var(--verde-claro);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+            transform: translateY(-3px);
+        }
+
+        .credito-card-icon {
+            font-size: 1.6rem;
+            margin-bottom: 14px;
+        }
+
+        .credito-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--verde-profundo);
+            margin-bottom: 8px;
+        }
+
+        .credito-card p {
+            font-size: 0.8rem;
+            color: var(--texto-suave);
+            line-height: 1.6;
+        }
+
+        .credito-tag {
+            display: inline-block;
+            background: rgba(45,107,26,0.1);
+            color: var(--verde-medio);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 12px;
+        }
+
+        /* ─── MERCADO ─────────────────────────────────────────── */
+        .mercado {
+            padding: 90px 40px;
+            background: var(--creme);
+        }
+
+        .mercado-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mercado-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 32px;
+            margin-top: 56px;
+        }
+
+        .dolar-card {
+            background: linear-gradient(135deg, var(--verde-profundo), var(--verde-escuro));
+            border-radius: 16px;
+            padding: 32px 28px;
+            color: var(--branco);
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
+        }
+
+        .dolar-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+        }
+
+        .dolar-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dourado-claro);
+            line-height: 1;
+        }
+
+        .dolar-change {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 6px;
+        }
+
+        .dolar-update {
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.35);
+            margin-top: 20px;
+        }
+
+        .clima-card {
+            background: var(--branco);
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .clima-header {
+            display: flex;
             align-items: center;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .clima-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--verde-profundo);
+        }
+
+        .clima-local {
+            font-size: 0.72rem;
+            color: var(--texto-suave);
+        }
+
+        .clima-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .clima-day {
+            text-align: center;
+            padding: 12px 6px;
+            border-radius: 10px;
+            background: var(--areia);
+            transition: background 0.2s;
+        }
+
+        .clima-day:hover { background: var(--borda); }
+
+        .clima-day-name {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--texto-suave);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .clima-day-icon { font-size: 1.3rem; margin-bottom: 6px; }
+
+        .clima-day-max {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--texto);
+        }
+
+        .clima-day-min {
+            font-size: 0.72rem;
+            color: var(--texto-suave);
+        }
+
+        .clima-day-rain {
+            font-size: 0.65rem;
+            color: #4a90d9;
+            margin-top: 4px;
+        }
+
+        /* ─── ALERTA PRO ──────────────────────────────────────── */
+        .alertapro {
+            padding: 90px 40px;
+            background: var(--areia);
+            border-top: 1px solid var(--borda);
+        }
+
+        .alertapro-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .alertapro-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(45,107,26,0.1);
+            border: 1px solid rgba(45,107,26,0.2);
+            color: var(--verde-medio);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .alertapro-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--verde-claro);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .alertapro-content .section-title { text-align: left; }
+
+        .alertapro-content p {
+            font-size: 0.9rem;
+            color: var(--texto-suave);
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+
+        .alertapro-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .ap-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--texto);
+        }
+
+        .ap-feature-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--dourado);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .alertapro-phone {
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-mockup {
+            width: 240px;
+            background: var(--verde-profundo);
+            border-radius: 32px;
+            padding: 20px 16px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.06);
+        }
+
+        .phone-notch {
+            width: 80px;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin: 0 auto 16px;
+        }
+
+        .phone-alert {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 10px;
+        }
+
+        .phone-alert-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .phone-alert-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot-red { background: #ff4444; }
+        .dot-yellow { background: var(--dourado); }
+        .dot-green { background: #44cc44; }
+
+        .phone-alert-title {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--branco);
+        }
+
+        .phone-alert-text {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.4;
+        }
+
+        /* ─── CONTATO ─────────────────────────────────────────── */
+        .contato {
+            padding: 100px 40px;
+            background: var(--creme);
+        }
+
+        .contato-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contato-info .section-header {
+            text-align: left;
+            margin-bottom: 36px;
+        }
+
+        .contato-info .section-title { font-size: 2rem; }
+
+        .contato-itens {
+            display: flex;
+            flex-direction: column;
             gap: 20px;
         }
 
-        .footer-info p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-            margin-top: 5px;
+        .contato-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
         }
+
+        .contato-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contato-item-text h4 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--verde-profundo);
+            margin-bottom: 2px;
+        }
+
+        .contato-item-text p, .contato-item-text a {
+            font-size: 0.85rem;
+            color: var(--texto-suave);
+            text-decoration: none;
+        }
+
+        .contato-item-text a:hover { color: var(--verde-medio); }
+
+        /* Formulário */
+        .contato-form {
+            background: var(--branco);
+            border: 1px solid var(--borda);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--verde-profundo);
+            margin-bottom: 6px;
+        }
+
+        .form-subtitle {
+            font-size: 0.82rem;
+            color: var(--texto-suave);
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--texto);
+            margin-bottom: 6px;
+            letter-spacing: 0.2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.88rem;
+            color: var(--texto);
+            background: var(--creme);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--verde-medio);
+            box-shadow: 0 0 0 3px rgba(45,107,26,0.1);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 90px; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 13px;
+            background: var(--verde-medio);
+            color: var(--branco);
+            border: none;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            margin-top: 6px;
+        }
+
+        .btn-submit:hover {
+            background: var(--verde-escuro);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(45,107,26,0.3);
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(74,145,48,0.08);
+            border: 1px solid rgba(74,145,48,0.2);
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+
+        .form-success p {
+            font-size: 0.88rem;
+            color: var(--verde-medio);
+            font-weight: 500;
+        }
+
+        /* ─── FOOTER ──────────────────────────────────────────── */
+        footer {
+            background: var(--verde-profundo);
+            padding: 56px 40px 32px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-brand .nav-logo { margin-bottom: 16px; }
+
+        .footer-brand p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.65;
+        }
+
+        .footer-col h4 {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul a {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul a:hover { color: var(--dourado-claro); }
 
         .footer-bottom {
-            max-width: 1200px;
-            margin: 30px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 28px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        /* WHATSAPP FLOAT */
-        .whatsapp-float {
+        .footer-bottom p {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-bottom a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.75rem;
+        }
+
+        .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+        /* ─── WHATSAPP FLOAT ──────────────────────────────────── */
+        .wpp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
+            bottom: 28px;
+            right: 28px;
+            width: 54px;
+            height: 54px;
             background: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: white;
+            font-size: 1.6rem;
             text-decoration: none;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 20px rgba(37,211,102,0.45);
             transition: all 0.3s;
             z-index: 999;
         }
 
-        .whatsapp-float:hover {
+        .wpp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 8px 28px rgba(37,211,102,0.6);
         }
 
-        /* RESPONSIVE */
+        /* ─── SCROLL REVEAL ───────────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── RESPONSIVE ──────────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .pilares-grid { grid-template-columns: 1fr 1fr; }
+            .credito-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 768px) {
-            .hero h2 { font-size: 2rem; }
-            .sobre-grid, .contato-grid { grid-template-columns: 1fr; }
-            .servicos-grid { grid-template-columns: 1fr; }
-            nav { display: none; }
-            .header-content { padding: 12px 20px; }
-            .logo-text h1 { font-size: 1.1rem; }
+            .navbar { padding: 0 20px; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+
+            .hero { padding: 100px 20px 60px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-visual { display: none; }
+            .hero-metrics { gap: 20px; }
+
+            .parceiros { padding: 40px 20px; }
+            .parceiros-logos { gap: 24px; }
+
+            .pilares { padding: 60px 20px; }
+            .pilares-grid { grid-template-columns: 1fr; }
+
+            .risco-inner { grid-template-columns: 1fr; gap: 40px; }
+            .risco-section { padding: 60px 20px; }
+
+            .credito { padding: 60px 20px; }
+            .credito-grid { grid-template-columns: 1fr 1fr; }
+
+            .mercado { padding: 60px 20px; }
+            .mercado-grid { grid-template-columns: 1fr; }
+            .clima-days { grid-template-columns: repeat(4, 1fr); }
+
+            .alertapro { padding: 60px 20px; }
+            .alertapro-inner { grid-template-columns: 1fr; gap: 40px; }
+            .alertapro-phone { display: none; }
+
+            .contato { padding: 60px 20px; }
+            .contato-inner { grid-template-columns: 1fr; gap: 40px; }
+
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+
+            .section-title { font-size: 1.9rem; }
+            .form-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-icon">C</div>
-                <div class="logo-text">
-                    <h1>Cerrado Consultoria</h1>
-                    <span>Agropecuária</span>
-                </div>
+<!-- ─── NAVBAR ─────────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">C</div>
+            <div class="nav-logo-text">
+                <strong>Cerrado Consultoria</strong>
+                <span>Agropecuária</span>
             </div>
-            <nav>
-                <a href="#sobre">Sobre</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#contato">Contato</a>
-            </nav>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#credito">Crédito Rural</a></li>
+            <li><a href="#mercado">Mercado</a></li>
+            <li><a href="#alertapro">Alerta Pro</a></li>
+            <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
+        </ul>
+        <div class="nav-hamburger" id="hamburger">
+            <span></span><span></span><span></span>
         </div>
-    </header>
+    </div>
+</nav>
 
-    <!-- HERO -->
-    <section class="hero">
+<!-- ─── HERO ───────────────────────────────────────────────────── -->
+<section class="hero" id="inicio">
+    <div class="hero-grid">
         <div class="hero-content">
-            <h2>Soluções Inteligentes para o <span>Agronegócio</span></h2>
-            <p>Assessoria rural completa, gestão de propriedades e documentação imobiliária com excelência e tecnologia.</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/556481472081" class="btn btn-primary" target="_blank">Fale Conosco</a>
-                <a href="#servicos" class="btn btn-secondary">Nossos Serviços</a>
+            <div class="hero-eyebrow">Consultoria Agropecuária Especializada</div>
+            <h1>Crédito rural, planejamento e <em>regularização</em> para o produtor</h1>
+            <p class="hero-desc">Assessoria completa para produtores de grãos e pecuária em Goiás, Minas Gerais e Tocantins. Mais de R$ 1 bilhão em crédito rural aprovado.</p>
+            <div class="hero-actions">
+                <a href="#contato" class="btn-gold">Solicitar Consultoria</a>
+                <a href="#servicos" class="btn-outline">Conheça os Serviços</a>
             </div>
-        </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section class="sobre" id="sobre">
-        <div class="container">
-            <h2 class="section-title">Quem Somos</h2>
-            <p class="section-subtitle">Tradição e inovação no campo</p>
-            <div class="sobre-grid">
-                <div class="sobre-text">
-                    <h3>Cerrado Consultoria Agropecuária</h3>
-                    <p>Somos uma empresa especializada em consultoria agropecuária, com foco em gestão de propriedades rurais, documentação imobiliária e assessoria técnica para produtores rurais na região do Cerrado goiano.</p>
-                    <p>Com sede em Bom Jesus de Goiás - GO, atuamos em toda a região do Sul de Goiás e Triângulo Mineiro, oferecendo soluções completas para otimizar a gestão do seu negócio rural.</p>
-                    <p><strong>CNPJ:</strong> 36.877.747/0001-70<br>
-                    <strong>Razão Social:</strong> RR Lopes do Nascimento LTDA</p>
+            <div class="hero-metrics">
+                <div class="metric">
+                    <span class="metric-value">R$1bi+</span>
+                    <span class="metric-label">em crédito aprovado</span>
                 </div>
-                <div class="sobre-stats">
-                    <div class="stat-card">
-                        <div class="number">5+</div>
-                        <div class="label">Anos de experiência</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="number">80+</div>
-                        <div class="label">Imóveis gerenciados</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="number">6</div>
-                        <div class="label">Municípios atendidos</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="number">100%</div>
-                        <div class="label">Compromisso</div>
-                    </div>
+                <div class="metric">
+                    <span class="metric-value">660+</span>
+                    <span class="metric-label">matrículas monitoradas</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value">64</span>
+                    <span class="metric-label">clientes ativos</span>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <div class="hero-card-icon icon-gold">💰</div>
+                    <div class="hero-card-title">Crédito Rural</div>
+                </div>
+                <p class="hero-card-desc">FCO, Custeio Agrícola, Pronaf, Investimento — todas as linhas do Plano Safra com assessoria especializada.</p>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <div class="hero-card-icon icon-green">📋</div>
+                    <div class="hero-card-title">Compliance e Regularização</div>
+                </div>
+                <p class="hero-card-desc">CCIR, CAR, ITR, CIB em dia. Evite multas do CREA e autuações de órgãos ambientais.</p>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <div class="hero-card-icon icon-blue">🗂️</div>
+                    <div class="hero-card-title">Gestão Documental</div>
+                </div>
+                <p class="hero-card-desc">Organização completa da documentação da propriedade rural. Tudo atualizado e acessível quando precisar.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- SERVICOS -->
-    <section class="servicos" id="servicos">
-        <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
-            <p class="section-subtitle">Soluções completas para o produtor rural</p>
-            <div class="servicos-grid">
-                <div class="servico-card">
-                    <div class="servico-icon">📋</div>
-                    <h3>Documentação Imobiliária</h3>
-                    <p>Gestão completa de matrículas, certidões e registros de imóveis rurais. Organização e controle documental.</p>
+<!-- ─── MARQUEE ────────────────────────────────────────────────── -->
+<div class="marquee-section">
+    <div class="marquee-track">
+        <span class="marquee-item">CCIR — Lei 10.267/2001</span>
+        <span class="marquee-item">CAR — Lei 12.651/2012</span>
+        <span class="marquee-item">ITR — IN RFB 2.202/2024</span>
+        <span class="marquee-item">CIB — Cadastro Imobiliário Brasileiro</span>
+        <span class="marquee-item">SNCR — Sistema Nacional de Cadastro Rural</span>
+        <span class="marquee-item">FCO Rural — Fundo Constitucional do Centro-Oeste</span>
+        <span class="marquee-item">Plano Safra 2024/2025</span>
+        <span class="marquee-item">Pronaf — Agricultura Familiar</span>
+        <span class="marquee-item">Seguro Agrícola</span>
+        <span class="marquee-item">Consórcio Rural</span>
+        <span class="marquee-item">CCIR — Lei 10.267/2001</span>
+        <span class="marquee-item">CAR — Lei 12.651/2012</span>
+        <span class="marquee-item">ITR — IN RFB 2.202/2024</span>
+        <span class="marquee-item">CIB — Cadastro Imobiliário Brasileiro</span>
+        <span class="marquee-item">SNCR — Sistema Nacional de Cadastro Rural</span>
+        <span class="marquee-item">FCO Rural — Fundo Constitucional do Centro-Oeste</span>
+        <span class="marquee-item">Plano Safra 2024/2025</span>
+        <span class="marquee-item">Pronaf — Agricultura Familiar</span>
+        <span class="marquee-item">Seguro Agrícola</span>
+        <span class="marquee-item">Consórcio Rural</span>
+    </div>
+</div>
+
+<!-- ─── PARCEIROS ─────────────────────────────────────────────── -->
+<section class="parceiros">
+    <div class="parceiros-inner">
+        <p class="parceiros-label">Instituições Financeiras Parceiras</p>
+        <div class="parceiros-logos">
+            <div class="banco-logo">
+                <div class="banco-badge bb">BB</div>
+                <span class="banco-nome">Banco do Brasil</span>
+            </div>
+            <div class="banco-logo">
+                <div class="banco-badge bradesco">BDO</div>
+                <span class="banco-nome">Bradesco</span>
+            </div>
+            <div class="banco-logo">
+                <div class="banco-badge caixa">CEF</div>
+                <span class="banco-nome">Caixa Econômica</span>
+            </div>
+            <div class="banco-logo">
+                <div class="banco-badge sicredi">SCR</div>
+                <span class="banco-nome">Sicredi</span>
+            </div>
+            <div class="banco-logo">
+                <div class="banco-badge sicoob">SCB</div>
+                <span class="banco-nome">Sicoob</span>
+            </div>
+        </div>
+        <div class="eagro-wrapper">
+            <span class="eagro-badge">✓ Conveniado e-Agro Bradesco — Financiamento digital para o produtor rural</span>
+        </div>
+    </div>
+</section>
+
+<!-- ─── PILARES DE SERVIÇO ────────────────────────────────────── -->
+<section class="pilares" id="servicos">
+    <div class="section-header reveal">
+        <p class="section-eyebrow">O que fazemos</p>
+        <h2 class="section-title">Três pilares para o sucesso da sua propriedade</h2>
+        <p class="section-desc">Assessoria especializada do Eng. Agrônomo Rodrigo de Aguiar, com foco em grãos e pecuária no Cerrado.</p>
+    </div>
+    <div class="pilares-grid">
+        <div class="pilar-card reveal">
+            <div class="pilar-icon">💰</div>
+            <h3>Crédito Rural</h3>
+            <p>Acesso às melhores linhas de financiamento do Plano Safra, com toda a documentação preparada para aprovação rápida.</p>
+            <ul class="pilar-list">
+                <li>FCO Rural e Invest Agro</li>
+                <li>Custeio agrícola (recurso controlado)</li>
+                <li>Pronaf e Pronamp</li>
+                <li>Crédito para máquinas e equipamentos</li>
+                <li>Consórcio para aquisição de imóvel rural</li>
+                <li>Seguro agrícola</li>
+            </ul>
+        </div>
+        <div class="pilar-card reveal">
+            <div class="pilar-icon">⚖️</div>
+            <h3>Compliance e Regularização</h3>
+            <p>Mantenha sua propriedade 100% regular perante o CREA, Agrodefesa e demais órgãos ambientais. Evite multas e autuações.</p>
+            <ul class="pilar-list">
+                <li>Monitoramento de CCIR, CAR, ITR e CIB</li>
+                <li>Regularização junto ao CREA-GO</li>
+                <li>Acompanhamento de processos na Agrodefesa</li>
+                <li>Atualização do cadastro de áreas plantadas</li>
+                <li>Alertas preventivos de vencimento</li>
+            </ul>
+        </div>
+        <div class="pilar-card reveal">
+            <div class="pilar-icon">🗂️</div>
+            <h3>Gestão Documental</h3>
+            <p>Toda a documentação da sua propriedade organizada, atualizada e disponível quando você precisar — sem surpresas.</p>
+            <ul class="pilar-list">
+                <li>Gestão de matrículas e certidões</li>
+                <li>Organização de contratos e registros</li>
+                <li>Laudos técnicos e pareceres agronômicos</li>
+                <li>Consultoria técnica por áudio (WhatsApp)</li>
+                <li>Visita técnica presencial do engenheiro</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ─── RISCO / AUTUAÇÃO ──────────────────────────────────────── -->
+<section class="risco-section">
+    <div class="risco-inner">
+        <div class="risco-content reveal">
+            <p class="section-eyebrow">Por que regularizar agora?</p>
+            <h2 class="section-title">O CREA intensificou a fiscalização. Sua propriedade está em dia?</h2>
+            <p>Nos últimos anos, o CREA-GO e a Agrodefesa aumentaram significativamente o número de fiscalizações em propriedades rurais. Produtores com documentação irregular estão recebendo autos de infração com multas pesadas e, em casos graves, bloqueio de acesso a crédito rural.</p>
+            <p>O acompanhamento contínuo de um escritório de consultoria agropecuária é o que separa o produtor que cresce do que fica preso em burocracia. Nossa equipe monitora seus prazos e obrigações para que você foque no que importa: produzir.</p>
+            <a href="#contato" class="btn-gold">Quero um diagnóstico gratuito</a>
+        </div>
+        <div class="risco-cards reveal">
+            <div class="risco-card">
+                <div class="risco-card-icon">⚠️</div>
+                <div class="risco-card-text">
+                    <h4>Auto de Infração do CREA</h4>
+                    <p>Exercício irregular de atividade técnica agronômica. Multas a partir de R$ 5.000.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">🌾</div>
-                    <h3>Assessoria Rural</h3>
-                    <p>Consultoria técnica para otimização de processos e gestão eficiente de propriedades agropecuárias.</p>
+            </div>
+            <div class="risco-card">
+                <div class="risco-card-icon">🌿</div>
+                <div class="risco-card-text">
+                    <h4>Irregularidade no CAR</h4>
+                    <p>Cadastro Ambiental Rural desatualizado pode bloquear acesso a financiamentos e gerar multas ambientais.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">📊</div>
-                    <h3>Gestão Financeira</h3>
-                    <p>Controle financeiro, planejamento tributário e gestão de contas para o agronegócio.</p>
+            </div>
+            <div class="risco-card">
+                <div class="risco-card-icon">📄</div>
+                <div class="risco-card-text">
+                    <h4>CCIR e ITR Vencidos</h4>
+                    <p>Documentos vencidos impedem transferências, financiamentos e qualquer movimentação do imóvel rural.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">🗺️</div>
-                    <h3>Georreferenciamento</h3>
-                    <p>Serviços de georreferenciamento e regularização fundiária de imóveis rurais.</p>
-                </div>
-                <div class="servico-card">
-                    <div class="servico-icon">⚖️</div>
-                    <h3>Regularização</h3>
-                    <p>Assessoria em processos de regularização junto a cartórios e órgãos competentes.</p>
-                </div>
-                <div class="servico-card">
-                    <div class="servico-icon">💡</div>
-                    <h3>Tecnologia no Campo</h3>
-                    <p>Implementação de soluções tecnológicas para modernização e automação de processos rurais.</p>
+            </div>
+            <div class="risco-card">
+                <div class="risco-card-icon">🏦</div>
+                <div class="risco-card-text">
+                    <h4>Bloqueio de Crédito Rural</h4>
+                    <p>Irregularidades documentais são a principal causa de reprovação em análises de crédito nos bancos.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CONTATO -->
-    <section class="contato" id="contato">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <p class="section-subtitle">Estamos prontos para ajudar seu negócio</p>
-            <div class="contato-grid">
-                <div class="contato-info">
-                    <div class="contato-item">
-                        <div class="icon">📍</div>
-                        <div>
-                            <h4>Endereço</h4>
-                            <p>R. Duque de Caxias, 175 - Quadra 8-A, Centro<br>Bom Jesus de Goiás - GO, 75570-000</p>
-                        </div>
-                    </div>
-                    <div class="contato-item">
-                        <div class="icon">📞</div>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>(64) 3608-3944</p>
-                        </div>
-                    </div>
-                    <div class="contato-item">
-                        <div class="icon">📱</div>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>(64) 8147-2081</p>
-                        </div>
-                    </div>
-                    <div class="contato-item">
-                        <div class="icon">✉️</div>
-                        <div>
-                            <h4>E-mail</h4>
-                            <p>rodrigo@cerradoconsultoria.agr.br</p>
-                        </div>
-                    </div>
-                    <div class="contato-item">
-                        <div class="icon">📷</div>
-                        <div>
-                            <h4>Instagram</h4>
-                            <p>@cerradoconsultoria</p>
-                        </div>
+<!-- ─── LINHAS DE CRÉDITO ─────────────────────────────────────── -->
+<section class="credito" id="credito">
+    <div class="credito-inner">
+        <div class="section-header reveal">
+            <p class="section-eyebrow">Financiamento Agrícola</p>
+            <h2 class="section-title">Trabalhamos com todas as linhas de crédito rural</h2>
+            <p class="section-desc">Assessoria completa desde a análise de viabilidade até a liberação dos recursos, com convênio nas principais instituições financeiras do agronegócio.</p>
+        </div>
+        <div class="credito-grid">
+            <div class="credito-card reveal">
+                <div class="credito-card-icon">🌾</div>
+                <h4>Custeio Agrícola</h4>
+                <p>Recursos do Plano Safra para financiar a produção de soja, milho e demais culturas. Taxas controladas pelo governo federal.</p>
+                <span class="credito-tag">Plano Safra</span>
+            </div>
+            <div class="credito-card reveal">
+                <div class="credito-card-icon">🏗️</div>
+                <h4>FCO e Invest Agro</h4>
+                <p>Fundo Constitucional do Centro-Oeste para investimento em infraestrutura, máquinas e modernização da propriedade.</p>
+                <span class="credito-tag">FCO Rural</span>
+            </div>
+            <div class="credito-card reveal">
+                <div class="credito-card-icon">🚜</div>
+                <h4>Máquinas e Equipamentos</h4>
+                <p>Financiamento de tratores, colheitadeiras e implementos agrícolas com as melhores condições do mercado.</p>
+                <span class="credito-tag">Moderfrota</span>
+            </div>
+            <div class="credito-card reveal">
+                <div class="credito-card-icon">🐄</div>
+                <h4>Pecuária de Corte</h4>
+                <p>Crédito para aquisição de gado, pastagens, cercas e estrutura de confinamento. Foco em gado de corte.</p>
+                <span class="credito-tag">Pronamp</span>
+            </div>
+            <div class="credito-card reveal">
+                <div class="credito-card-icon">🏡</div>
+                <h4>Consórcio de Imóvel Rural</h4>
+                <p>Aquisição de fazendas e propriedades rurais por meio de consórcio, sem juros e com parcelas acessíveis.</p>
+                <span class="credito-tag">Consórcio</span>
+            </div>
+            <div class="credito-card reveal">
+                <div class="credito-card-icon">🛡️</div>
+                <h4>Seguro Agrícola</h4>
+                <p>Proteção da lavoura contra eventos climáticos adversos. Cobertura para soja, milho e demais culturas.</p>
+                <span class="credito-tag">Proagro</span>
+            </div>
+            <div class="credito-card reveal">
+                <div class="credito-card-icon">🌱</div>
+                <h4>RenovAgro</h4>
+                <p>Crédito para adoção de práticas sustentáveis e recuperação de pastagens degradadas no Cerrado.</p>
+                <span class="credito-tag">Sustentabilidade</span>
+            </div>
+            <div class="credito-card reveal">
+                <div class="credito-card-icon">💻</div>
+                <h4>e-Agro Bradesco</h4>
+                <p>Financiamento digital com nossa plataforma conveniada. Processo simplificado e aprovação mais ágil.</p>
+                <span class="credito-tag">Digital</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── MERCADO ───────────────────────────────────────────────── -->
+<section class="mercado" id="mercado">
+    <div class="mercado-inner">
+        <div class="section-header reveal">
+            <p class="section-eyebrow">Mercado Agro</p>
+            <h2 class="section-title">Informações de mercado em tempo real</h2>
+            <p class="section-desc">Acompanhe o dólar e a previsão climática para Goiatuba-GO, região de atuação da Cerrado Consultoria.</p>
+        </div>
+        <div class="mercado-grid">
+            <div class="dolar-card">
+                <div>
+                    <p class="dolar-label">Dólar Comercial (USD/BRL)</p>
+                    <div class="dolar-value" id="dolar-value">—</div>
+                    <div class="dolar-change" id="dolar-change"></div>
+                </div>
+                <p class="dolar-update" id="dolar-update">Carregando...</p>
+            </div>
+            <div class="clima-card">
+                <div class="clima-header">
+                    <div>
+                        <div class="clima-title">Previsão do Tempo</div>
+                        <div class="clima-local">Goiatuba — GO · 7 dias</div>
                     </div>
                 </div>
-                <div class="contato-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15148.5!2d-49.78!3d-18.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a6b0!2sBom%20Jesus%20de%20Goi%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy"></iframe>
+                <div class="clima-days" id="clima-days">
+                    <div style="text-align:center;grid-column:1/-1;padding:20px;color:var(--texto-suave);font-size:0.8rem;">Carregando previsão...</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <div class="logo">
-                    <div class="logo-icon">C</div>
-                    <div class="logo-text">
-                        <h1>Cerrado Consultoria</h1>
+<!-- ─── ALERTA PRO ────────────────────────────────────────────── -->
+<section class="alertapro" id="alertapro">
+    <div class="alertapro-inner">
+        <div class="alertapro-content reveal">
+            <div class="alertapro-badge">Em desenvolvimento</div>
+            <p class="section-eyebrow">Tecnologia para o campo</p>
+            <h2 class="section-title">Alerta Pro: compliance rural automatizado com IA</h2>
+            <p>O Alerta Pro é o nosso aplicativo de monitoramento de obrigações legais para propriedades rurais. Ele monitora seus prazos de CCIR, CAR, ITR e CIB e envia alertas via WhatsApp antes do vencimento.</p>
+            <p>Combinamos inteligência artificial com o acompanhamento humano do Eng. Agrônomo Rodrigo de Aguiar para garantir que nenhum prazo seja perdido. O aplicativo está em fase final de desenvolvimento e em breve estará disponível para nossos clientes.</p>
+            <div class="alertapro-features">
+                <div class="ap-feature"><div class="ap-feature-dot"></div>Alertas automáticos de vencimento via WhatsApp</div>
+                <div class="ap-feature"><div class="ap-feature-dot"></div>Consultoria técnica por áudio com o engenheiro</div>
+                <div class="ap-feature"><div class="ap-feature-dot"></div>Agendamento de visitas técnicas presenciais</div>
+                <div class="ap-feature"><div class="ap-feature-dot"></div>Dashboard de status de todas as obrigações</div>
+                <div class="ap-feature"><div class="ap-feature-dot"></div>Monitoramento de 660+ matrículas em tempo real</div>
+            </div>
+        </div>
+        <div class="alertapro-phone">
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="phone-alert">
+                    <div class="phone-alert-header">
+                        <div class="phone-alert-dot dot-red"></div>
+                        <div class="phone-alert-title">⚠️ CCIR vence em 15 dias</div>
+                    </div>
+                    <p class="phone-alert-text">Fazenda Santa Rita — Goiatuba/GO. Providencie a renovação para evitar bloqueios.</p>
+                </div>
+                <div class="phone-alert">
+                    <div class="phone-alert-header">
+                        <div class="phone-alert-dot dot-yellow"></div>
+                        <div class="phone-alert-title">📋 ITR — Prazo se aproximando</div>
+                    </div>
+                    <p class="phone-alert-text">Declaração do ITR 2025 deve ser entregue até 30/09. Documentação em análise.</p>
+                </div>
+                <div class="phone-alert">
+                    <div class="phone-alert-header">
+                        <div class="phone-alert-dot dot-green"></div>
+                        <div class="phone-alert-title">✅ CAR — Regularizado</div>
+                    </div>
+                    <p class="phone-alert-text">Cadastro Ambiental Rural atualizado com sucesso. Válido até 12/2026.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CONTATO ───────────────────────────────────────────────── -->
+<section class="contato" id="contato">
+    <div class="contato-inner">
+        <div class="contato-info">
+            <div class="section-header">
+                <p class="section-eyebrow">Fale Conosco</p>
+                <h2 class="section-title">Tire sua dúvida ou solicite uma análise</h2>
+                <p class="section-desc">Nossa equipe responde em até 24 horas. Deixe sua mensagem e entraremos em contato.</p>
+            </div>
+            <div class="contato-itens">
+                <div class="contato-item">
+                    <div class="contato-icon">📍</div>
+                    <div class="contato-item-text">
+                        <h4>Endereço</h4>
+                        <p>R. Duque de Caxias, 175 — Centro<br>Bom Jesus de Goiás — GO</p>
+                    </div>
+                </div>
+                <div class="contato-item">
+                    <div class="contato-icon">✉️</div>
+                    <div class="contato-item-text">
+                        <h4>E-mail</h4>
+                        <a href="mailto:contato@cerradoconsultoria.agr.br">contato@cerradoconsultoria.agr.br</a>
+                    </div>
+                </div>
+                <div class="contato-item">
+                    <div class="contato-icon">📷</div>
+                    <div class="contato-item-text">
+                        <h4>Instagram</h4>
+                        <a href="https://www.instagram.com/cerradoconsultoria" target="_blank">@cerradoconsultoria</a>
+                    </div>
+                </div>
+                <div class="contato-item">
+                    <div class="contato-icon">🌐</div>
+                    <div class="contato-item-text">
+                        <h4>Responsável Técnico</h4>
+                        <p>Eng. Agrônomo Rodrigo de Aguiar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contato-form reveal">
+            <h3 class="form-title">Envie sua mensagem</h3>
+            <p class="form-subtitle">Preencha o formulário e nossa equipe responderá em breve.</p>
+            <form id="contact-form" action="https://formspree.io/f/xreaanlg" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome">Nome completo *</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone / WhatsApp</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(64) 9 0000-0000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="interesse">Assunto</label>
+                    <select id="interesse" name="interesse">
+                        <option value="">Selecione o assunto</option>
+                        <option value="credito-rural">Crédito Rural / Financiamento</option>
+                        <option value="compliance">Compliance e Regularização</option>
+                        <option value="documentacao">Gestão Documental</option>
+                        <option value="alerta-pro">Alerta Pro (Aplicativo)</option>
+                        <option value="seguro">Seguro Agrícola</option>
+                        <option value="consorcio">Consórcio Rural</option>
+                        <option value="outro">Outro assunto</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Sua dúvida ou mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Descreva sua necessidade ou dúvida..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                <div class="form-success" id="form-success">
+                    <p>✅ Mensagem enviada! Retornaremos em até 24 horas.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────── -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">
+                    <div class="nav-logo-icon">C</div>
+                    <div class="nav-logo-text">
+                        <strong>Cerrado Consultoria</strong>
                         <span>Agropecuária</span>
                     </div>
-                </div>
-                <p>RR Lopes do Nascimento LTDA - CNPJ: 36.877.747/0001-70</p>
+                </a>
+                <p>Cerrado Consultoria Agropecuária Ltda.<br>CNPJ: 36.877.747/0001-70<br>Eng. Agrônomo Rodrigo de Aguiar<br>Bom Jesus de Goiás — GO</p>
+            </div>
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="#credito">Crédito Rural</a></li>
+                    <li><a href="#servicos">Compliance Rural</a></li>
+                    <li><a href="#servicos">Gestão Documental</a></li>
+                    <li><a href="#servicos">Seguro Agrícola</a></li>
+                    <li><a href="#servicos">Consórcio Rural</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="mailto:contato@cerradoconsultoria.agr.br">contato@cerradoconsultoria.agr.br</a></li>
+                    <li><a href="https://www.instagram.com/cerradoconsultoria" target="_blank">@cerradoconsultoria</a></li>
+                    <li><a href="#contato">Formulário de Contato</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Cerrado Consultoria Agropecuária. Todos os direitos reservados.</p>
+            <p>© 2026 Cerrado Consultoria Agropecuária — Gestão de Propriedades Rurais</p>
+            <a href="mailto:contato@cerradoconsultoria.agr.br">contato@cerradoconsultoria.agr.br</a>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/556481472081" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
-        💬
-    </a>
+<!-- ─── WHATSAPP FLOAT ─────────────────────────────────────────── -->
+<a href="https://wa.me/556481472081" class="wpp-float" target="_blank" title="Fale conosco no WhatsApp">💬</a>
+
+<!-- ─── SCRIPTS ───────────────────────────────────────────────── -->
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+navbar.classList.add('scrolled'); // sempre com fundo
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+revealEls.forEach(el => observer.observe(el));
+
+// Dólar — AwesomeAPI
+async function loadDolar() {
+    try {
+        const res = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL');
+        const data = await res.json();
+        const d = data.USDBRL;
+        const val = parseFloat(d.bid).toFixed(4);
+        const pct = parseFloat(d.pctChange);
+        document.getElementById('dolar-value').textContent = `R$ ${val.replace('.', ',')}`;
+        const sign = pct >= 0 ? '+' : '';
+        document.getElementById('dolar-change').textContent = `${sign}${pct.toFixed(2)}% hoje`;
+        document.getElementById('dolar-change').style.color = pct >= 0 ? '#ff8844' : '#44cc88';
+        const now = new Date();
+        document.getElementById('dolar-update').textContent = `Atualizado às ${now.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'})}`;
+    } catch {
+        document.getElementById('dolar-value').textContent = '—';
+        document.getElementById('dolar-update').textContent = 'Indisponível no momento';
+    }
+}
+loadDolar();
+setInterval(loadDolar, 300000);
+
+// Clima — Open-Meteo (Goiatuba-GO)
+const WMO = {
+    0:'☀️',1:'🌤️',2:'⛅',3:'☁️',
+    45:'🌫️',48:'🌫️',
+    51:'🌦️',53:'🌦️',55:'🌧️',
+    61:'🌧️',63:'🌧️',65:'🌧️',
+    71:'🌨️',73:'🌨️',75:'🌨️',
+    80:'🌦️',81:'🌧️',82:'⛈️',
+    95:'⛈️',96:'⛈️',99:'⛈️'
+};
+const DIAS = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+
+async function loadClima() {
+    try {
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=-18.01&longitude=-49.36&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&timezone=America%2FSao_Paulo&forecast_days=7';
+        const res = await fetch(url);
+        const data = await res.json();
+        const { time, temperature_2m_max, temperature_2m_min, precipitation_probability_max, weathercode } = data.daily;
+        const container = document.getElementById('clima-days');
+        container.innerHTML = time.map((t, i) => {
+            const d = new Date(t + 'T12:00:00');
+            const nome = i === 0 ? 'Hoje' : DIAS[d.getDay()];
+            const icon = WMO[weathercode[i]] || '🌡️';
+            const rain = precipitation_probability_max[i];
+            return `
+                <div class="clima-day">
+                    <div class="clima-day-name">${nome}</div>
+                    <div class="clima-day-icon">${icon}</div>
+                    <div class="clima-day-max">${Math.round(temperature_2m_max[i])}°</div>
+                    <div class="clima-day-min">${Math.round(temperature_2m_min[i])}°</div>
+                    ${rain > 20 ? `<div class="clima-day-rain">💧${rain}%</div>` : ''}
+                </div>`;
+        }).join('');
+    } catch {
+        document.getElementById('clima-days').innerHTML = '<div style="text-align:center;grid-column:1/-1;padding:20px;color:var(--texto-suave);font-size:0.8rem;">Previsão indisponível</div>';
+    }
+}
+loadClima();
+
+// Formulário — feedback visual
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    const btn = this.querySelector('.btn-submit');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    setTimeout(() => {
+        document.getElementById('form-success').style.display = 'block';
+        btn.textContent = 'Mensagem Enviada ✓';
+    }, 1200);
+});
+</script>
 
 </body>
 </html>
