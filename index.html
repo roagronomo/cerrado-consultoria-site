@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrado Consultoria Agropecuária — Crédito Rural, Planejamento e Regularização</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="description" content="Cerrado Consultoria Agropecuária: assessoria especializada em crédito rural, planejamento agropecuário e regularização ambiental para produtores de grãos e pecuária em Goiás, Minas Gerais e Tocantins.">
     <meta name="keywords" content="crédito rural, financiamento agrícola, consultoria agropecuária, regularização ambiental, CREA, CAR, ITR, CCIR, Goiás, Cerrado">
     <meta property="og:title" content="Cerrado Consultoria Agropecuária">
@@ -162,7 +163,7 @@
         /* ─── HERO ───────────────────────────────────────────── */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(160deg, var(--verde-profundo) 0%, var(--verde-escuro) 55%, #1e4d12 100%);
+            background: linear-gradient(160deg, rgba(15,42,10,0.88) 0%, rgba(26,64,16,0.82) 55%, rgba(30,77,18,0.78) 100%), url('img/hero_colheita_soja_cerrado.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             position: relative;
@@ -611,7 +612,7 @@
 
         /* ─── ALERTA / RISCO ──────────────────────────────────── */
         .risco-section {
-            background: linear-gradient(135deg, var(--verde-profundo) 0%, #0d2208 100%);
+            background: linear-gradient(135deg, rgba(15,42,10,0.92) 0%, rgba(13,34,8,0.90) 100%), url('img/agronomo_campo.jpg') center/cover no-repeat;
             padding: 90px 40px;
             position: relative;
             overflow: hidden;
@@ -694,6 +695,16 @@
         .credito {
             padding: 100px 40px;
             background: var(--areia);
+            position: relative;
+        }
+
+        .credito::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('img/lavoura_soja_verde_cerrado.jpg') center/cover no-repeat;
+            opacity: 0.04;
+            pointer-events: none;
         }
 
         .credito-inner {
@@ -886,6 +897,16 @@
             padding: 90px 40px;
             background: var(--areia);
             border-top: 1px solid var(--borda);
+            position: relative;
+        }
+
+        .alertapro::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('img/plantadeira_cerrado.jpg') center/cover no-repeat;
+            opacity: 0.05;
+            pointer-events: none;
         }
 
         .alertapro-inner {
@@ -1345,8 +1366,8 @@
 <nav class="navbar" id="navbar">
     <div class="navbar-inner">
         <a href="#" class="nav-logo">
-            <div class="nav-logo-icon">C</div>
-            <div class="nav-logo-text">
+            <img src="img/logo-cerrado.png" alt="Cerrado Consultoria" style="height:42px;width:auto;object-fit:contain;">
+            <div class="nav-logo-text" style="display:none;">
                 <strong>Cerrado Consultoria</strong>
                 <span>Agropecuária</span>
             </div>
@@ -1794,9 +1815,9 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <a href="#" class="nav-logo">
-                    <div class="nav-logo-icon">C</div>
-                    <div class="nav-logo-text">
-                        <strong>Cerrado Consultoria</strong>
+            <img src="img/logo-cerrado.png" alt="Cerrado Consultoria" style="height:42px;width:auto;object-fit:contain;">
+            <div class="nav-logo-text" style="display:none;">
+                <strong>Cerrado Consultoria</strong>
                         <span>Agropecuária</span>
                     </div>
                 </a>
